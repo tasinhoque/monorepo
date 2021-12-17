@@ -1,0 +1,33 @@
+{
+  "name": "js-ts-monotrepos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mike-north/js-ts-monorepos.git",
+  "author": "Mike North <michael.l.north@gmail.com>",
+  "license": "BSD-2-Clause",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages",
+    "clean": "lerna run clean --concurrency 4",
+    "echo": "echo fe | commitlint",
+    "lint": "lerna run lint --stream --concurrency 1",
+    "bootstrap": "lerna bootstrap",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-lerna-scopes": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "commitlint": "^15.0.0",
+    "eslint": "^8.4.1",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
+    "lerna-changelog": "^2.2.0",
+    "rimraf": "^3.0.2"
+  }
+}
